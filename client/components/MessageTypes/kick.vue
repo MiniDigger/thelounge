@@ -1,6 +1,6 @@
 <template>
 	<span class="content">
-		<Username :user="message.from" />
+		<Username :user="message.from" :quit="quit" />
 		has kicked
 		<Username :user="message.target" />
 		<i v-if="message.text" class="part-reason">
@@ -22,6 +22,7 @@ export default {
 	props: {
 		network: Object,
 		message: Object,
+		quit: Boolean,
 	},
 };
 </script>

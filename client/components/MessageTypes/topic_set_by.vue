@@ -1,7 +1,7 @@
 <template>
 	<span class="content">
 		Topic set by
-		<Username :user="message.from" />
+		<Username :user="message.from" :quit="quit" />
 		on {{ message.when | localetime }}
 	</span>
 </template>
@@ -17,6 +17,7 @@ export default {
 	props: {
 		network: Object,
 		message: Object,
+		quit: Boolean,
 	},
 };
 </script>

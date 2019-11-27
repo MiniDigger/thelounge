@@ -1,6 +1,6 @@
 <template>
 	<span
-		:class="['user', nickColor, {active: active}]"
+		:class="['user', nickColor, {active: active}, {quit: quit}]"
 		:data-name="user.nick"
 		role="button"
 		v-on="onHover ? {mouseover: hover} : {}"
@@ -19,6 +19,7 @@ export default {
 		user: Object,
 		active: Boolean,
 		onHover: Function,
+		quit: Boolean,
 	},
 	computed: {
 		nickColor() {

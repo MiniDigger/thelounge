@@ -1,6 +1,6 @@
 <template>
 	<span class="content">
-		<Username :user="message.from" />
+		<Username :user="message.from" :quit="quit" />
 		<i class="hostmask"> ({{ message.hostmask }})</i>
 		has joined the channel
 	</span>
@@ -17,6 +17,7 @@ export default {
 	props: {
 		network: Object,
 		message: Object,
+		quit: Boolean,
 	},
 };
 </script>

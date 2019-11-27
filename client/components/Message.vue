@@ -15,12 +15,12 @@
 		</template>
 		<template v-else-if="isAction()">
 			<span class="from"><span class="only-copy">*** </span></span>
-			<Component :is="messageComponent" :network="network" :message="message" />
+			<Component :is="messageComponent" :network="network" :message="message" :quit="quit" />
 		</template>
 		<template v-else-if="message.type === 'action'">
 			<span class="from"><span class="only-copy">* </span></span>
 			<span class="content" dir="auto">
-				<Username :user="message.from" dir="auto" />&#32;<ParsedMessage
+				<Username :user="message.from" :quit="quit" dir="auto" />&#32;<ParsedMessage
 					:message="message"
 				/>
 				<LinkPreview
@@ -35,7 +35,7 @@
 			<span v-if="message.type === 'message'" class="from">
 				<template v-if="message.from && message.from.nick">
 					<span class="only-copy">&lt;</span>
-					<Username :user="message.from" />
+					<Username :user="message.from" :quit="quit" />
 					<span class="only-copy">&gt; </span>
 				</template>
 			</span>
@@ -49,12 +49,12 @@
 			<span v-else class="from">
 				<template v-if="message.from && message.from.nick">
 					<span class="only-copy">-</span>
-					<Username :user="message.from" />
+					<Username :user="message.from" :quit="quit" />
 					<span class="only-copy">- </span>
 				</template>
 			</span>
 			<span class="content" dir="auto">
-				<ParsedMessage :network="network" :message="message" />
+				<ParsedMessage :network="network" :message="message" :quit="quit" />
 				<LinkPreview
 					v-for="preview in message.previews"
 					:key="preview.link"
@@ -97,6 +97,16 @@ export default {
 		},
 		messageComponent() {
 			return "message-" + this.message.type;
+		},
+		quit() {
+			if (this.message.from && this.channel) {
+				const user = this.channel.users.find(
+					(user) => user.nick.toLowerCase() === this.message.from.nick.toLowerCase()
+				);
+				return user === undefined;
+			} else {
+				return false;
+			}
 		},
 	},
 	methods: {

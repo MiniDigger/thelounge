@@ -35,6 +35,7 @@
 				<MessageCondensed
 					v-if="message.type === 'condensed'"
 					:key="message.messages[0].id"
+					:channel="channel"
 					:network="network"
 					:keep-scroll-position="keepScrollPosition"
 					:messages="message.messages"

@@ -1,6 +1,6 @@
 <template>
 	<span class="content">
-		<Username :user="message.from" />
+		<Username :user="message.from" :quit="quit" />
 		sent a <abbr title="Client-to-client protocol">CTCP</abbr> request:
 		<span class="ctcp-message"><ParsedMessage :text="message.ctcpMessage"/></span>
 	</span>
@@ -19,6 +19,7 @@ export default {
 	props: {
 		network: Object,
 		message: Object,
+		quit: Boolean,
 	},
 };
 </script>

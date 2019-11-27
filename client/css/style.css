@@ -1305,6 +1305,12 @@ background on hover (unless active) */
 	color: #50a656;
 }
 
+#chat .msg .from .user.quit,
+#chat .msg .content .user.quit {
+	color: gray;
+	text-decoration: line-through;
+}
+
 #chat.colored-nicks .user.color-1 { color: #107ead; }
 #chat.colored-nicks .user.color-2 { color: #a86500; }
 #chat.colored-nicks .user.color-3 { color: #008a3c; }

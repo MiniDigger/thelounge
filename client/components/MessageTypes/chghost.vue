@@ -1,6 +1,6 @@
 <template>
 	<span class="content">
-		<Username :user="message.from" />
+		<Username :user="message.from" :quit="quit" />
 		has changed
 		<span v-if="message.new_ident"
 			>username to <b>{{ message.new_ident }}</b></span
@@ -22,6 +22,7 @@ export default {
 	props: {
 		network: Object,
 		message: Object,
+		quit: Boolean,
 	},
 };
 </script>

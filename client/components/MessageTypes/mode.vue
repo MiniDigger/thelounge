@@ -1,6 +1,6 @@
 <template>
 	<span class="content">
-		<Username :user="message.from" />
+		<Username :user="message.from" :quit="quit" />
 		sets mode
 		<ParsedMessage :message="message" />
 	</span>
@@ -19,6 +19,7 @@ export default {
 	props: {
 		network: Object,
 		message: Object,
+		quit: Boolean,
 	},
 };
 </script>

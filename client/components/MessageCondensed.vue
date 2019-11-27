@@ -12,6 +12,7 @@
 			v-for="message in messages"
 			:key="message.id"
 			:network="network"
+			:channel="channel"
 			:message="message"
 		/>
 	</div>
@@ -28,6 +29,7 @@ export default {
 	},
 	props: {
 		network: Object,
+		channel: Object,
 		messages: Array,
 		keepScrollPosition: Function,
 	},

@@ -1,6 +1,6 @@
 <template>
 	<span class="content">
-		<Username :user="message.from" />
+		<Username :user="message.from" :quit="quit" />
 		<i class="hostmask"> ({{ message.hostmask }})</i> has left the channel
 		<i v-if="message.text" class="part-reason"
 			>(<ParsedMessage :network="network" :message="message" />)</i
@@ -21,6 +21,7 @@ export default {
 	props: {
 		network: Object,
 		message: Object,
+		quit: Boolean,
 	},
 };
 </script>

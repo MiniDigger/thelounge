@@ -2,7 +2,7 @@
 	<span class="content">
 		<ParsedMessage v-if="message.self" :network="network" :message="message" />
 		<template v-else>
-			<Username :user="message.from" />
+			<Username :user="message.from" :quit="quit" />
 			is away
 			<i class="away-message">(<ParsedMessage :network="network" :message="message" />)</i>
 		</template>
@@ -22,6 +22,7 @@ export default {
 	props: {
 		network: Object,
 		message: Object,
+		quit: Boolean,
 	},
 };
 </script>
