@@ -60,7 +60,7 @@
     "package-json": "6.5.0",
     "read": "1.0.7",
     "read-chunk": "3.2.0",
-    "semver": "6.3.0",
+    "semver": "6.3.1",
     "socket.io": "2.3.0",
     "tlds": "1.203.1",
     "ua-parser-js": "0.7.20",
