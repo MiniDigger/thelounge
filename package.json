@@ -48,7 +48,7 @@
     "commander": "4.0.1",
     "express": "4.17.1",
     "file-type": "12.4.0",
-    "filenamify": "4.1.0",
+    "filenamify": "4.3.0",
     "fs-extra": "8.1.0",
     "got": "9.6.0",
     "irc-framework": "4.5.2",
